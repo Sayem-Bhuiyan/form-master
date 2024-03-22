@@ -5,7 +5,8 @@ const HookForm = () => {
     // const [email, handleEmailChange] = useInputState('');
     // const [password, handlePassChange] = useInputState('')
 
-    const nameState = useInputState('')
+    const nameState = useInputState('');
+    const emailState = useInputState('')
 
     // const handleSubmit = e => {
     //      e.preventDefault();
@@ -13,7 +14,7 @@ const HookForm = () => {
     // }
     const handleSubmit = e => {
         e.preventDefault();
-        console.log(nameState)
+        console.log(nameState, emailState)
     }
 
     return (
@@ -30,7 +31,7 @@ const HookForm = () => {
             <form onSubmit={(e) =>handleSubmit(e)}>
                 <input {...nameState} className="border-2" type="text" name="name"/>
                 <br />
-                <input className="border-2" type="email" name="email"/>
+                <input {...emailState} className="border-2" type="email" name="email"/>
                 <br />
                 <input className="border-2" type="text" name="phone"/>
                 <br />
